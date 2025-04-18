@@ -4,6 +4,7 @@
   "description": "Lightweight security checks for AI-assisted coding.",
   "publisher": "rohithg",
   "version": "0.0.1",
+  "icon": "images/logo.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/rohith0087/vibeguard.git"
