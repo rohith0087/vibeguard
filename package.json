@@ -2,7 +2,7 @@
   "name": "vibeguard",
   "displayName": "VibeGuard",
   "description": "Lightweight security checks for AI-assisted coding.",
-  "publisher": "rohithg",
+  "publisher": "vibe-guard",
   "version": "0.0.1",
   "icon": "images/logo.png",
   "repository": {
