@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:vibeguard.helloWorld"
+    "onLanguage:python"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -19,7 +19,17 @@
         "command": "vibeguard.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "VibeGuard",
+      "properties": {
+        "vibeguard.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable/disable VibeGuard analysis."
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
