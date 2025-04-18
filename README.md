@@ -2,7 +2,7 @@
 
 **Lightweight security checks for AI-assisted & rapid coding.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <!-- Optional license badge -->
 
 VibeGuard is a VS Code extension designed to help developers, especially those prioritizing speed ("vibe coding") and using AI code assistants, catch common security vulnerabilities without disrupting their workflow. It focuses on high-confidence, actionable warnings for common issues often overlooked during rapid development.
 
@@ -25,12 +25,13 @@ _(Instructions for installing the packaged `.vsix` file will go here once built.
 
 <!--
 Example for later:
-1. Download the latest `.vsix` file from the [Releases](<link-to-your-releases-page>).
+1. Download the latest `.vsix` file from the [Releases](https://github.com/rohith0087/vibeguard/releases). <!-- Updated link example -->
+
 2. Open VS Code.
 3. Go to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X`).
 4. Click the `...` menu in the top-right corner.
 5. Select "Install from VSIX..." and choose the downloaded file.
--->
+   -->
 
 ## Usage
 
@@ -53,17 +54,18 @@ Transparency is important! VibeGuard's MVP uses regex-based detection, which has
   - May flag variables containing keywords as substrings (e.g., `display_token = "..."` might be flagged because it contains `token`).
   - Will not detect secrets assigned without quotes or using less common keywords.
 - **SQL Injection (VG002):**
+  - **Only detects unsafe formatting (f-string / %-format) when performed _directly inside_ the database execution call (e.g., `cursor.execute(f"...")`). It does NOT detect cases where the unsafe query string is built first and then passed as a variable (e.g., `query = f"..."; cursor.execute(query)`).**
   - May flag legitimate uses of f-strings or %-formatting as arguments within a `.execute()` call if they are not the query itself (e.g., `cursor.execute(f"Log marker: {var}", real_query)` could be flagged).
   - Will not detect SQLi constructed via simple string concatenation (`"SELECT..." + var`) or using `.format()`.
-  - May miss SQLi if unusual database execution method names are used or if the query is built across multiple lines.
+  - May miss SQLi if unusual database execution method names are used.
 - **Comments/Docstrings:** May flag patterns within comments or docstrings.
 
-Future versions may use more advanced techniques (like AST parsing) to improve accuracy.
+Future versions will likely use more advanced techniques (like AST parsing) to improve accuracy and detect more cases.
 
 ## Contributing / Feedback
 
-_(Optional: Add instructions here later if you want contributions or specify how users can provide feedback - e.g., link to your GitHub repository issues page)._
+Feedback is welcome! Please report issues or suggest features on the [GitHub Issues page](https://github.com/rohith0087/vibeguard/issues). <!-- Updated link -->
 
 ## License
 
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details. <!-- Create a LICENSE file with MIT text -->
+This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
