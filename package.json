@@ -2,7 +2,12 @@
   "name": "vibeguard",
   "displayName": "VibeGuard",
   "description": "Lightweight security checks for AI-assisted coding.",
+  "publisher": "rohithg",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohith0087/vibeguard.git"
+  },
   "engines": {
     "vscode": "^1.99.0"
   },
